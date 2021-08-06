@@ -87,9 +87,7 @@ namespace OstCetCatalogJuicerConsole.OptionAnalyzer
             await CreateCsvFiles(chooser.GoodList, chooser.BadList, chooser.UnknownList);
 
             Console.Clear();
-            Console.WriteLine($"Deleted Count: {deletedMaterialCount}");
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine($"Deleted Count Material Reference Count: {deletedMaterialCount}");
         }
 
         /// <summary>
@@ -134,9 +132,9 @@ namespace OstCetCatalogJuicerConsole.OptionAnalyzer
         {
             var badMaterialCodes = badOptionCodes.Split(';');
             var badOptions = options.Where(option => badMaterialCodes.Contains(option.Code));
-            var badMaterialReferences = badOptions.Select(option => option.MaterialApplicationReference);
+            var badMaterialReferences = badOptions.Select(option => option.MaterialApplicationReference).ToList();
             var materialBc = OptionMaterialApplicationBc();
-            return materialBc.DeleteModelsAsync(badMaterialReferences);
+            return badMaterialReferences.Count == 0 ? Task.FromResult(0) : materialBc.DeleteModelsAsync(badMaterialReferences.Where(model => model != null));
         }
 
         /// <summary>

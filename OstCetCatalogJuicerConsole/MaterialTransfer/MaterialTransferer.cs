@@ -60,6 +60,7 @@ namespace OstCetCatalogJuicerConsole.MaterialTransfer
                 await externalBc.UpdateModelAsync(model);
             }
 
+            Console.WriteLine("Number of updated materials: " + toUpdate.Count);
         }
 
         /// <summary>

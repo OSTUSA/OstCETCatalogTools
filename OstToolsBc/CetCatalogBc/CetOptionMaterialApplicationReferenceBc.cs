@@ -24,16 +24,12 @@ namespace OstToolsBc.CetCatalogBc
         #region Create
 
         /// <inheritdoc />
-        public override Task<int> CreateModelAsync(CetOptionMaterialApplicationReferenceModel model)
-        {
-            throw new NotImplementedException();
-        }
+        public override Task<int> CreateModelAsync(CetOptionMaterialApplicationReferenceModel model) =>
+            _materialApplicationReferenceTable.AddNewReferenceAsync(model);
 
         /// <inheritdoc />
-        public override Task<int> CreateModelAsync(IEnumerable<CetOptionMaterialApplicationReferenceModel> models)
-        {
-            throw new NotImplementedException();
-        }
+        public override Task<int> CreateModelAsync(IEnumerable<CetOptionMaterialApplicationReferenceModel> models) =>
+            _materialApplicationReferenceTable.AddMultipleReferencesAsync(models);
 
         #endregion Create
 

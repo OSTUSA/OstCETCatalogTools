@@ -1,0 +1,35 @@
+﻿<Window x:Class="CatalogJuicer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatalogJuicer"
+        xmlns:controls="clr-namespace:OstCatalogJuicer.Controls"
+        xmlns:ostControls="clr-namespace:OstCatalogJuicer.OstControls"
+        xmlns:viewModels="clr-namespace:OstCatalogJuicer.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        MinWidth="800"
+        MinHeight="450">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModels:OptionCleanerViewModel}">
+            <ostControls:OptionCleanerControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:HomeControlViewModel}">
+            <ostControls:HomeControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:CreatorViewModel}">
+            <ostControls:CreatorControl/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Background="#3D5265">
+        <ContentControl Grid.ZIndex="1000"  Content="{Binding Path=NavBar}"></ContentControl>
+        <Grid ZIndex="500" x:Name="ContentArea" 
+              Margin="73,8,8,8"
+              >
+            <ContentControl Content="{Binding Path=CurrentContentViewModel}"></ContentControl>
+        </Grid>
+    </Grid>
+</Window>

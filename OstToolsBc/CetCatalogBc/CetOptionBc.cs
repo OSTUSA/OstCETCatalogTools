@@ -57,14 +57,23 @@ namespace OstToolsBc.CetCatalogBc
             IEnumerable<CetOptionDescriptionReferenceModel> descriptions,
             IEnumerable<CetOptionMaterialApplicationReferenceModel> materials)
         {
-            options = from o in options
-                join d in descriptions
-                    on o.Id equals d.OwnerKey
-                join m in materials
-                    on o.Id equals m.OwnerKey
-                select BuildModel(o, d, m);
+            var optionList = options.ToList();
+            var descriptionList = descriptions.ToList();
+            var materialList = materials.ToList();
+            var found = new List<CetOptionModel>();
 
-            return options;
+            foreach (var option in optionList)
+            {
+                var description = descriptionList.FirstOrDefault(des => des.OwnerKey == option.Id);
+                var material = materialList.FirstOrDefault(mat => mat.OwnerKey == option.Id);
+
+                option.DescriptionReference = description;
+                option.MaterialApplicationReference = material;
+
+                found.Add(option);
+            }
+
+            return found;
         }
 
         /// <summary>
