@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OstToolsBc", "OstToolsBc\Os
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OstCetCatalogJuicerConsole", "OstCetCatalogJuicerConsole\OstCetCatalogJuicerConsole.csproj", "{D4DA897D-516F-4809-8249-0C9C624E3491}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OstCatalogJuicer", "CatalogJuicer\OstCatalogJuicer.csproj", "{BC19BA32-E98B-4D23-9D5F-689A947CC740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OstCatalogJuicer", "CatalogJuicer\OstCatalogJuicer.csproj", "{BC19BA32-E98B-4D23-9D5F-689A947CC740}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OstToolsCommon", "OstToolsCommon\OstToolsCommon.csproj", "{FFF39C3F-4F86-45E4-B008-953462CA203B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{BC19BA32-E98B-4D23-9D5F-689A947CC740}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC19BA32-E98B-4D23-9D5F-689A947CC740}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC19BA32-E98B-4D23-9D5F-689A947CC740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFF39C3F-4F86-45E4-B008-953462CA203B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFF39C3F-4F86-45E4-B008-953462CA203B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFF39C3F-4F86-45E4-B008-953462CA203B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFF39C3F-4F86-45E4-B008-953462CA203B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

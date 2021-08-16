@@ -7,6 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            <TextBlock Text="HOME PAGE"></TextBlock>
+        <StackPanel>
+            <Label Content="Catalog File"></Label>
+            <TextBox Name="DbTextBox" Opacity=".7" Height="20"></TextBox>
+        </StackPanel>
+        
     </Grid>
 </UserControl>

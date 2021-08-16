@@ -10,12 +10,14 @@ namespace OstCetCatalogJuicerConsole
 {
     class Program
     {
-        private const string _dbConnectionString = "Data Source=C:\\Users\\Johnnie\\Documents\\CET Documents\\Intrinsic\\INR.db3";
+        private const string _dbConnectionString = "Data Source=C:\\Users\\Johnnie\\Documents\\CET Documents\\ConferBenching\\TCB.db3";
 
         static async Task Main(string[] args)
         {
             await RunOptionAnalyzer();
+            // await RunOptionRepopulator();
         }
+
 
         #region Material Application Copier
 

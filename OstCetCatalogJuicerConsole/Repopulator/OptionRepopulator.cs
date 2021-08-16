@@ -127,11 +127,10 @@ namespace OstCetCatalogJuicerConsole.Repopulator
             IEnumerable<CetOptionModel> options)
         {
             var materials = (await GetMaterialApplicationBc().ReadAllAsync()).ToList();
-            materials = materials.Where(material => _optionCodeList.Contains(material.MaterialReference)).ToList();
             var references = new List<CetOptionMaterialApplicationReferenceModel>();
             foreach (var option in options)
             {
-                var material = materials.FirstOrDefault(mat => mat.MaterialReference == option.Code);
+                var material = materials.FirstOrDefault(mat => string.Equals(mat.MaterialReference.Trim(), option.Code.Trim(), StringComparison.CurrentCultureIgnoreCase));
                 if (material == null) continue;
                 references.Add(new CetOptionMaterialApplicationReferenceModel
                 {
