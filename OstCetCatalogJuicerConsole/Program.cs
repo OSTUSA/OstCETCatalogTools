@@ -10,12 +10,12 @@ namespace OstCetCatalogJuicerConsole
 {
     class Program
     {
-        private const string _dbConnectionString = "Data Source=C:\\Users\\Johnnie\\Documents\\CET Documents\\ConferBenching\\TCB.db3";
+        private const string _dbConnectionString = "Data Source=C:\\Users\\Johnnie\\Documents\\CET Documents\\Volo\\TML.db3";
 
         static async Task Main(string[] args)
         {
-            await RunOptionAnalyzer();
-            // await RunOptionRepopulator();
+            await OverwriteOldProductReferences();
+            // await RunOptionAnalyzer();
         }
 
 
@@ -99,5 +99,12 @@ namespace OstCetCatalogJuicerConsole
         }
 
         #endregion
+
+        private static async Task OverwriteOldProductReferences()
+        {
+            const string xrfPath = "C:\\Users\\Johnnie\\Documents\\CET Documents\\Volo\\XRF.TXT";
+            var writer = new ProductReferenceOverWriter(_dbConnectionString, xrfPath);
+            await writer.OverwriteProductReferences();
+        }
     }
 }

@@ -80,7 +80,7 @@ namespace OstCetCatalogJuicerConsole
             var externalProductReferences = (await GetProductExternalReferenceBc().ReadAllAsync()).ToList();
             var toUpdate =
                 GetToUpdateExternalReferences(xrfModels, products, productReferences, externalProductReferences);
-            await UpdateExternalReferences(toUpdate);
+            // await UpdateExternalReferences(toUpdate);
         }
 
         /// <summary>
@@ -119,14 +119,18 @@ namespace OstCetCatalogJuicerConsole
                     string.Equals(product.Code, xrf.PartNumber, StringComparison.CurrentCultureIgnoreCase));
                 if (xrfModel == null) continue;
 
-                var dsProductReference = cetDsProductReferences.FirstOrDefault(prdRef => product.Id == prdRef.OwnerKey);
-                if (dsProductReference == null) continue;
+                var dsProductReferences = cetDsProductReferences.Where(prdRef => product.Id == prdRef.OwnerKey);
+                var referenceIds = dsProductReferences.Select(prdRef => prdRef.ValueKey).ToList();
 
-                var externalReference =
-                    cetExternalReferences.FirstOrDefault(extRef => extRef.Id == dsProductReference.ValueKey);
+                var externalReferences =
+                    cetExternalReferences.Where(extRef => referenceIds.Contains(extRef.Id));
+
+                var externalReference = externalReferences.FirstOrDefault(extRef => extRef.Url.EndsWith(".cmsym"));
                 if (externalReference == null) continue;
 
-                externalReference.Url = xrfModel.Symbol + ".cmsym";
+                var newSymbol = xrfModel.Symbol + ".cmsym";
+                if (string.Equals(newSymbol, externalReference.Url, StringComparison.CurrentCultureIgnoreCase)) continue;
+                externalReference.Url = newSymbol;
                 found.Add(externalReference);
             }
 
