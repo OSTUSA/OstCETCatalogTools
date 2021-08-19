@@ -11,5 +11,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Code { get; set; }
         public string VariantsTableRef { get; set; }
         public long? Directional { get; set; }
+
+        public List<DataCatalogMaterialsRef> CatalogMaterialsRefs { get; set; }
     }
 }

@@ -8,9 +8,13 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
-            <Label Content="Catalog File"></Label>
-            <TextBox Name="DbTextBox" Opacity=".7" Height="20"></TextBox>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Top File" Margin="8" HorizontalAlignment="Left"></Label>
+                <TextBox Name="DbTextBox" Opacity=".7" Height="20" IsReadOnly="True" Width="300" Margin="8" HorizontalAlignment="Center"></TextBox>
+                <Button Content="Select" Margin="8" Padding="8,0" HorizontalAlignment="Right"></Button>
+            </StackPanel>
         </StackPanel>
-        
+
     </Grid>
 </UserControl>

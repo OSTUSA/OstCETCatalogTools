@@ -44,10 +44,8 @@ namespace OstToolsBc.CetCatalogBc
         #region Update
 
         /// <inheritdoc />
-        public override Task<int> UpdateModelAsync(CetProductExternalReferenceTypeModel model)
-        {
-            throw new NotImplementedException();
-        }
+        public override Task<int> UpdateModelAsync(CetProductExternalReferenceTypeModel model) =>
+            _externalTable.Update(model);
 
         /// <inheritdoc />
         public override Task<int> UpdateModelAsync(IEnumerable<CetProductExternalReferenceTypeModel> models)

@@ -15,5 +15,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public long? CurrencyRoundingRule { get; set; }
         public string Effectivedate { get; set; }
         public string Expirationdate { get; set; }
+
+        public List<DataCatalogPricelistsRef> DataCatalogPricelistRef { get; set; }
     }
 }

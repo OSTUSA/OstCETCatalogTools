@@ -12,5 +12,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string UnitMeasure { get; set; }
         public string ConstraintsApplyStyle { get; set; }
         public string ConstraintType { get; set; }
+
+        public List<DataCatalogVendorsRef> CatalogVendorsRefs { get; set; }
     }
 }

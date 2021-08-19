@@ -8,29 +8,26 @@ using Xunit;
 
 namespace OstCatalogToolsUnitTest.DataLayer.CetCatalogEf
 {
-    public class CetCatalogUnitTests
+    public abstract class CatalogBaseUnitTest
     {
-        private readonly string _dbConnectionString = "Data Source=" + Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty, @"DataLayer/CetCatalogEf/TML.db3");
+        private CetCatalogContext _cetCatalogContext;
 
-        /// <summary>
-        /// Can Connect to Database
-        /// </summary>
-        [Fact]
-        public async Task CanConnect_Void_IsTrue()
-        {
-            var cetCatalog = GetContext();
-            Assert.True(await cetCatalog.Database.CanConnectAsync());
+        protected CetCatalogContext CetCatalogContext 
+        { 
+            get 
+            { 
+                 _cetCatalogContext ??= new CetCatalogContext(BuildContext()); 
+                return _cetCatalogContext; 
+            } 
         }
 
-
-
-
+        private readonly string _dbConnectionString = "Data Source=" + Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty, @"DataLayer/CetCatalogEf/TML.db3");
 
         /// <summary>
         /// Get DB Context
         /// </summary>
         /// <returns></returns>
-        private CetCatalogContext GetContext()
+        protected CetCatalogContext GetContext()
         {
             return new CetCatalogContext(BuildContext());
         }

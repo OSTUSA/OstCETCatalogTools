@@ -11,5 +11,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public long? OwnerKey { get; set; }
         public string ValueKey { get; set; }
         public string TypeKey { get; set; }
+
+        public ApplicationAreaType Parent;
     }
 }

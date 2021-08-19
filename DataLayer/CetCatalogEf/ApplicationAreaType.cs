@@ -11,5 +11,9 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Code { get; set; }
         public string SurfaceId { get; set; }
         public string MtrlRef { get; set; }
+
+        public List<ApplicationAreaTypeSurfaceIdsRef> ApplicationSurfaceReference { get; set; }
+
+        public DataCatalogApplicationAreasRef DataCatalogApplicationAreasRef { get; set; }
     }
 }

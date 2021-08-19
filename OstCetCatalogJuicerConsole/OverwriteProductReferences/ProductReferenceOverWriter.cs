@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using OstToolsBc.CetCatalogBc;
@@ -9,12 +8,24 @@ using OstToolsDataLayer.CetCatalog;
 using OstToolsModels.CetCatalog;
 using XrfParser;
 
-namespace OstCetCatalogJuicerConsole
+namespace OstCetCatalogJuicerConsole.OverwriteProductReferences
 {
+    // TODO: Change to Entity Framework.
     public class ProductReferenceOverWriter
     {
+        /// <summary>
+        /// Database Connection String
+        /// </summary>
         private readonly string _dbConnectionString;
+
+        /// <summary>
+        /// Xrf File Path
+        /// </summary>
         private readonly string _xrfPath;
+
+        /// <summary>
+        /// Service provider used in dependency injection.
+        /// </summary>
         private readonly ServiceProvider _services;
 
         public ProductReferenceOverWriter(string dbConnectionString, string xrfPath)
@@ -80,7 +91,7 @@ namespace OstCetCatalogJuicerConsole
             var externalProductReferences = (await GetProductExternalReferenceBc().ReadAllAsync()).ToList();
             var toUpdate =
                 GetToUpdateExternalReferences(xrfModels, products, productReferences, externalProductReferences);
-            // await UpdateExternalReferences(toUpdate);
+            await UpdateExternalReferences(toUpdate);
         }
 
         /// <summary>

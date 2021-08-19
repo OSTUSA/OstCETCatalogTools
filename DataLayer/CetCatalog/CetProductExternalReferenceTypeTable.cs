@@ -134,6 +134,17 @@ namespace OstToolsDataLayer.CetCatalog
 
         #endregion
 
+        #region Update
+
+        public Task<int> Update(CetProductExternalReferenceTypeModel model)
+        {
+            var command =
+                $"UPDATE {CetProductExternalReferenceTypeConstants.TableName} SET {CetProductExternalReferenceTypeConstants.UrlColumnName}='{model.Url}', {CetProductExternalReferenceTypeConstants.PreviewUrlColumnName}='{model.PreviewUrl}', {CetProductExternalReferenceTypeConstants.UsageTypeColumnName}='{model.UsageType}',{CetProductExternalReferenceTypeConstants.MeasureParamColumnName}='{model.MeasureParameter}', {CetProductExternalReferenceTypeConstants.CodeColumnName}='{model.Code}', {CetProductExternalReferenceTypeConstants.InsertionIdColumnName}='{model.InsertionId}', {CetProductExternalReferenceTypeConstants.PtColumnName}='{model.Pt}' WHERE {CetProductExternalReferenceTypeConstants.IdColumnName} = '{model.Id}'";
+            return ExecuteNonQueryAsync(command, new List<KeyValuePair<string, string>>());
+        }
+
+        #endregion
+
         #region Sqlite Helper Methods
 
         /// <summary>

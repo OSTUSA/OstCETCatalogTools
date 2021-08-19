@@ -31,5 +31,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public long? HasMtrl { get; set; }
         public long? HasGraphic { get; set; }
         public long? HasRange { get; set; }
+
+        public List<DataCatalogFeaturesRef> CatalogFeatureRefs { get; set; }
     }
 }

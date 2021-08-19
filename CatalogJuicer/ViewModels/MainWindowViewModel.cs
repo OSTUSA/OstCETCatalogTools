@@ -18,6 +18,8 @@ namespace OstCatalogJuicer.ViewModels
         /// </summary>
         private ViewModelBase _currentContentViewModel;
 
+        private readonly ViewModelBase _homeViewModel = new HomeControlViewModel();
+
         public ViewModelBase CurrentContentViewModel
         {
             get => _currentContentViewModel;
@@ -71,7 +73,7 @@ namespace OstCatalogJuicer.ViewModels
         /// <summary>
         /// Load home Control
         /// </summary>
-        private void LoadHome() => CurrentContentViewModel = new HomeControlViewModel();
+        private void LoadHome() => CurrentContentViewModel = _homeViewModel;
 
         /// <summary>
         /// Load Creator Control
