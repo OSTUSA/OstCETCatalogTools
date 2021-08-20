@@ -15,5 +15,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Code { get; set; }
         public string InsertionId { get; set; }
         public string Pt { get; set; }
+
+        public List<DsProductTypeExternalRef> ProductTypeExternalRefs { get; set; }
     }
 }

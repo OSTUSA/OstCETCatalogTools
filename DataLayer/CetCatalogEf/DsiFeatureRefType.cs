@@ -11,5 +11,9 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Code { get; set; }
         public string DefaultOptionRef { get; set; }
         public string SelectedOptionRef { get; set; }
+
+        public List<DsProductTypeFeatureRefsRef> ProductTypeFeatureRefsRefs { get; set; }
+
+        public List<OptionFeatureRefsRef> OptionFeatureRefs { get; set; }
     }
 }

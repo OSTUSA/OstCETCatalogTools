@@ -11,5 +11,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Code { get; set; }
 
         public List<DsClassificationRefTypeSubRefsRef> ClassificationRefTypeSubRefsRefs { get; set; }
+
+        public List<DsProductTypeClassificationRefsRef> ProductTypeClassificationRefsRefs { get; set; }
     }
 }

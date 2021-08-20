@@ -27,5 +27,11 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Delimiter { get; set; }
         public long? NumericSku { get; set; }
         public string MirrorOptionRef { get; set; }
+
+        public List<OptionDescriptionsRef> DescriptionsRefs { get; set; }
+
+        public List<OptionFeatureRefsRef> FeatureRefs { get; set; }
+
+        public List<OptionMtrlApplicationsRef> MtrlApplicationsRefs { get; set; }
     }
 }

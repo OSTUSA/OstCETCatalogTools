@@ -11,5 +11,11 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string MtrlRef { get; set; }
         public string Placement { get; set; }
         public string UniqueKey { get; set; }
+
+        public List<DsProductTypeMtrlApplicationsRef> ProductTypeMtrlApplicationsRefs { get; set; }
+
+        public List<MtrlApplicationareaRefRef> MtrlApplicationareaRefs { get; set; }
+
+        public List<OptionMtrlApplicationsRef> OptionMtrlApplicationsRefs { get; set; }
     }
 }

@@ -16,5 +16,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public double? CodeIncr { get; set; }
 
         public List<DsCustomInquiryTypeDescriptionsRef> DescriptionsRefs { get; set; }
+
+        public List<DsCustomOptionTypeInquiriesRef> CustomOptionTypeInquiriesRefs { get; set; }
     }
 }

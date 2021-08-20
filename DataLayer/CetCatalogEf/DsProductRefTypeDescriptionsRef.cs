@@ -12,5 +12,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string LookupKey { get; set; }
         public string ValueKey { get; set; }
         public string TypeKey { get; set; }
+
+        public DsProductRefType Owner { get; set; }
     }
 }

@@ -9,5 +9,9 @@ namespace OstToolsDataLayer.CetCatalogEf
     {
         public long Id { get; set; }
         public string Code { get; set; }
+
+        public List<DsTableHeadTypeNamesRef> NamesRefs { get; set; }
+
+        public List<DsTableTypeHeadsRef> TableTypeHeadsRefs { get; set; }
     }
 }

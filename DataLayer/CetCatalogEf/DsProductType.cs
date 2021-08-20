@@ -20,5 +20,17 @@ namespace OstToolsDataLayer.CetCatalogEf
         public long? PackageCount { get; set; }
 
         public List<DataCatalogProductsRef> CatalogProductsRefs { get; set; }
+
+        public List<DsProductTypeClassificationRefsRef> ProductTypeClassificationRefsRefs { get; set; }
+
+        public List<DsProductTypeDescriptionsRef> ProductTypeDescriptionsRefs { get; set; }
+
+        public List<DsProductTypeExternalRef> ProductTypeExternalRefs { get; set; }
+
+        public List<DsProductTypeFeatureRefsRef> ProductTypeFeatureRefsRefs { get; set; }
+
+        public List<DsProductTypeMeasurementsRef> ProductTypeMeasurementsRefs { get; set; }
+
+        public List<DsProductTypeMtrlApplicationsRef> ProductTypeMtrlApplicationsRefs { get; set; }
     }
 }
