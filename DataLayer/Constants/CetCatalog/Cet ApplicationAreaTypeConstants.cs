@@ -12,7 +12,7 @@ namespace OstToolsDataLayer.Constants.CetCatalog
         /// <summary>
         /// Table Name
         /// </summary>
-        public static string TableName = "ApplicationAreaType";
+        public static string TableName = "Child";
 
         /// <summary>
         /// Id Column

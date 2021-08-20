@@ -25,11 +25,11 @@ namespace OstToolsDataLayer.CetCatalog
         /// <returns>Table Creation Task</returns>
         public async Task CreateTable()
         {
-            if (await MetaExists("table", "ApplicationAreaType")) 
+            if (await MetaExists("table", "Child")) 
                 return;
 
             const string commandText =
-                "CREATE TABLE ApplicationAreaType (id INTEGER PRIMARY KEY, code TEXT, _surfaceId TEXT, _mtrlRef TEXT)";
+                "CREATE TABLE Child (id INTEGER PRIMARY KEY, code TEXT, _surfaceId TEXT, _mtrlRef TEXT)";
             await ExecuteNonQueryAsync(commandText, new List<KeyValuePair<string, string>>());
         }
 
@@ -71,7 +71,7 @@ namespace OstToolsDataLayer.CetCatalog
             if (await MetaExists("index", "ApplicationAreaTypecode"))
                 return;
 
-            const string commandText = "CREATE INDEX ApplicationAreaTypecode ON ApplicationAreaType (code)";
+            const string commandText = "CREATE INDEX ApplicationAreaTypecode ON Child (code)";
             await ExecuteNonQueryAsync(commandText, new List<KeyValuePair<string, string>>());
         }
 

@@ -11,5 +11,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Code { get; set; }
         public string Versions { get; set; }
         public string LeadTimeProgramRef { get; set; }
+
+        public DataCatalogCatalogsRef CatalogCatalogsRef { get; set; }
     }
 }

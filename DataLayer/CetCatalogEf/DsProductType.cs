@@ -18,5 +18,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string MirrPrdRef { get; set; }
         public double? MirrAngleOfSymmetry { get; set; }
         public long? PackageCount { get; set; }
+
+        public List<DataCatalogProductsRef> CatalogProductsRefs { get; set; }
     }
 }

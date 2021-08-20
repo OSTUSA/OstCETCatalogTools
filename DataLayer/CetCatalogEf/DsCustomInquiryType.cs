@@ -14,5 +14,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public double? CodeMin { get; set; }
         public double? CodeMax { get; set; }
         public double? CodeIncr { get; set; }
+
+        public List<DsCustomInquiryTypeDescriptionsRef> DescriptionsRefs { get; set; }
     }
 }

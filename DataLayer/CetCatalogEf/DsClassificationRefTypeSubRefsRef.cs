@@ -11,5 +11,9 @@ namespace OstToolsDataLayer.CetCatalogEf
         public long? OwnerKey { get; set; }
         public long? ValueKey { get; set; }
         public string TypeKey { get; set; }
+
+        public DsClassificationType Owner { get; set; }
+
+        public DsClassificationRefType Child { get; set; }
     }
 }
