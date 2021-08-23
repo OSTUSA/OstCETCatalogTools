@@ -12,5 +12,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public long? LookupKey { get; set; }
         public string ValueKey { get; set; }
         public string TypeKey { get; set; }
+
+        public Sfeature Owner { get; set; }
     }
 }

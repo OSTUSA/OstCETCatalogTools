@@ -15,5 +15,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Value { get; set; }
         public string MeasureParameter { get; set; }
         public string MParam { get; set; }
+
+        public List<DsProductTypeMeasurementsRef> ProductTypeMeasurementsRefs { get; set; } 
     }
 }

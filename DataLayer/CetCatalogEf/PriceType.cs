@@ -11,5 +11,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Code { get; set; }
         public string PricelistRef { get; set; }
         public double? Value { get; set; }
+
+        public List<PriceTypeSeqPriceTypesRef> PriceTypeSeqPriceTypesRefs { get; set; }
     }
 }

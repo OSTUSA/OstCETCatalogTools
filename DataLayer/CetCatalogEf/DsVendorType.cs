@@ -14,5 +14,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string ConstraintType { get; set; }
 
         public List<DataCatalogVendorsRef> CatalogVendorsRefs { get; set; }
+
+        public List<DsVendorTypeTablesRef> VendorTypeTablesRefs { get; set; }
     }
 }

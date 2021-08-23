@@ -16,5 +16,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Enterprise { get; set; }
         public string Vendor { get; set; }
         public string PrdCatKey { get; set; }
+
+        public List<DsProductRefTypeDescriptionsRef> DescriptionsRefs { get; set; }
     }
 }

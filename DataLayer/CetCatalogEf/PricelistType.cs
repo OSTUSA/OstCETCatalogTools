@@ -17,5 +17,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string Expirationdate { get; set; }
 
         public List<DataCatalogPricelistsRef> DataCatalogPricelistRef { get; set; }
+        
+        public List<PricelistTypeDescriptionsRef> PricelistTypeDescriptionsRefs { get; set; }
     }
 }

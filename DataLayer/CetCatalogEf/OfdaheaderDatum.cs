@@ -12,5 +12,9 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string UnitMeasure { get; set; }
         public string ConstraintsApplyStyle { get; set; }
         public string ConstraintType { get; set; }
+
+        public List<OfdaheaderDataDescriptionsRef> OfdaheaderDataDescriptionsRefs { get; set; }
+
+        public List<OfdaheaderDataNamesRef> OfdaheaderDataNamesRefs { get; set; }
     }
 }

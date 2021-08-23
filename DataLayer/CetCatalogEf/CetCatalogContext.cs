@@ -744,6 +744,16 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<DsCustomOptionTypeInquiriesRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.InquiriesRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<DsCustomOptionTypeInquiriesRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.CustomOptionTypeInquiriesRefs)
+                .HasForeignKey(r => r.ValueKey);
+
             modelBuilder.Entity<DsProductRefType>(entity =>
             {
                 entity.ToTable("DsProductRefType");
@@ -793,6 +803,11 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<DsProductRefTypeDescriptionsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.DescriptionsRefs)
+                .HasForeignKey(r => r.OwnerKey);
 
             modelBuilder.Entity<DsProductType>(entity =>
             {
@@ -863,6 +878,16 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<DsProductTypeClassificationRefsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.ProductTypeClassificationRefsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<DsProductTypeClassificationRefsRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.ProductTypeClassificationRefsRefs)
+                .HasForeignKey(r => r.ValueKey);
+
             modelBuilder.Entity<DsProductTypeDescriptionsRef>(entity =>
             {
                 entity.ToTable("DsProductType_descriptionsREF");
@@ -886,6 +911,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<DsProductTypeDescriptionsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.ProductTypeDescriptionsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<DsProductTypeExternalRef>(entity =>
             {
                 entity.ToTable("DsProductType_externalREF");
@@ -904,6 +934,17 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<DsProductTypeExternalRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.ProductTypeExternalRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+
+            modelBuilder.Entity<DsProductTypeExternalRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.ProductTypeExternalRefs)
+                .HasForeignKey(r => r.ValueKey);
 
             modelBuilder.Entity<DsProductTypeFeatureRefsRef>(entity =>
             {
@@ -924,6 +965,16 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<DsProductTypeFeatureRefsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.ProductTypeFeatureRefsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<DsProductTypeFeatureRefsRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.ProductTypeFeatureRefsRefs)
+                .HasForeignKey(r => r.ValueKey);
+
             modelBuilder.Entity<DsProductTypeMeasurementsRef>(entity =>
             {
                 entity.ToTable("DsProductType_measurementsREF");
@@ -943,6 +994,16 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<DsProductTypeMeasurementsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.ProductTypeMeasurementsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<DsProductTypeMeasurementsRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.ProductTypeMeasurementsRefs)
+                .HasForeignKey(r => r.ValueKey);
+
             modelBuilder.Entity<DsProductTypeMtrlApplicationsRef>(entity =>
             {
                 entity.ToTable("DsProductType_mtrlApplicationsREF");
@@ -961,6 +1022,16 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<DsProductTypeMtrlApplicationsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.ProductTypeMtrlApplicationsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<DsProductTypeMtrlApplicationsRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.ProductTypeMtrlApplicationsRefs)
+                .HasForeignKey(r => r.ValueKey);
 
             modelBuilder.Entity<DsProductTypeWireRefsRef>(entity =>
             {
@@ -1013,6 +1084,12 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<DsTableHeadTypeNamesRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.NamesRefs)
+                .HasForeignKey(r => r.OwnerKey);
+                
+
             modelBuilder.Entity<DsTableType>(entity =>
             {
                 entity.ToTable("DsTableType");
@@ -1046,6 +1123,16 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<DsTableTypeHeadsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.TableTypeHeadsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<DsTableTypeHeadsRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.TableTypeHeadsRefs)
+                .HasForeignKey(r => r.ValueKey);
 
             modelBuilder.Entity<DsVendorType>(entity =>
             {
@@ -1134,6 +1221,16 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<DsVendorTypeTablesRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.VendorTypeTablesRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<DsVendorTypeTablesRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.VendorTypeTablesRefs)
+                .HasForeignKey(r => r.ValueKey);
 
             modelBuilder.Entity<DsVersionPolicy>(entity =>
             {
@@ -1252,6 +1349,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<MtrlApplicationareaRefRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.MtrlApplicationareaRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<OfdaheaderDataDescriptionsRef>(entity =>
             {
                 entity.ToTable("OFDAHeaderData_descriptionsREF");
@@ -1275,6 +1377,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<OfdaheaderDataDescriptionsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.OfdaheaderDataDescriptionsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<OfdaheaderDataNamesRef>(entity =>
             {
                 entity.ToTable("OFDAHeaderData_namesREF");
@@ -1297,6 +1404,11 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<OfdaheaderDataNamesRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.OfdaheaderDataNamesRefs)
+                .HasForeignKey(r => r.OwnerKey);
 
             modelBuilder.Entity<OfdaheaderDatum>(entity =>
             {
@@ -1427,6 +1539,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<OptionDescriptionsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.DescriptionsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<OptionExternalRef>(entity =>
             {
                 entity.ToTable("Option_externalREF");
@@ -1465,6 +1582,16 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<OptionFeatureRefsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.FeatureRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<OptionFeatureRefsRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.OptionFeatureRefs)
+                .HasForeignKey(r => r.ValueKey);
+
             modelBuilder.Entity<OptionMtrlApplicationsRef>(entity =>
             {
                 entity.ToTable("Option_mtrlApplicationsREF");
@@ -1484,6 +1611,16 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<OptionMtrlApplicationsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.MtrlApplicationsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<OptionMtrlApplicationsRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.OptionMtrlApplicationsRefs)
+                .HasForeignKey(r => r.ValueKey);
+
             modelBuilder.Entity<OptionPriceType>(entity =>
             {
                 entity.ToTable("OptionPriceType");
@@ -1500,6 +1637,8 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.Value).HasColumnName("value");
             });
+
+
 
             modelBuilder.Entity<PackageVersion>(entity =>
             {
@@ -1603,6 +1742,16 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<PriceTypeSeqPriceTypesRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.PriceTypeSeqPriceTypesRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<PriceTypeSeqPriceTypesRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.PriceTypeSeqPriceTypesRefs)
+                .HasForeignKey(r => r.ValueKey);
+
             modelBuilder.Entity<PricelistType>(entity =>
             {
                 entity.ToTable("PricelistType");
@@ -1651,6 +1800,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<PricelistTypeDescriptionsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.PricelistTypeDescriptionsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<ProductCatalog>(entity =>
             {
                 entity.ToTable("ProductCatalog");
@@ -1691,6 +1845,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<ProductCatalogDescriptionsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.DescriptionsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<ProductCatalogEnterpriseRefRef>(entity =>
             {
                 entity.ToTable("ProductCatalog_enterpriseRefREF");
@@ -1709,6 +1868,11 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<ProductCatalogEnterpriseRefRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.EnterpriseRefRefs)
+                .HasForeignKey(r => r.OwnerKey);
 
             modelBuilder.Entity<ProductCatalogNamesRef>(entity =>
             {
@@ -1733,6 +1897,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<ProductCatalogNamesRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.NamesRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<ProductCatalogPriceListRefRef>(entity =>
             {
                 entity.ToTable("ProductCatalog_priceListRefREF");
@@ -1756,6 +1925,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<ProductCatalogPriceListRefRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.PriceListRefRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<ProductCatalogTableOfContentsRef>(entity =>
             {
                 entity.ToTable("ProductCatalog_tableOfContentsREF");
@@ -1774,6 +1948,16 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<ProductCatalogTableOfContentsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.TableOfContentsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<ProductCatalogTableOfContentsRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.TableOfContentsRefs)
+                .HasForeignKey(r => r.ValueKey);
 
             modelBuilder.Entity<ProductCatalogToolboxesRef>(entity =>
             {
@@ -1837,6 +2021,11 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<ProductLevelDescriptionsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.DescriptionsRefs)
+                .HasForeignKey(r => r.OwnerKey);
 
             modelBuilder.Entity<ProductLevelExternalRef>(entity =>
             {
@@ -1975,6 +2164,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<SfeatureDescriptionsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.DescriptionsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<SfeatureExternalRef>(entity =>
             {
                 entity.ToTable("SFeature_externalREF");
@@ -2013,6 +2207,16 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<SfeatureMtrlApplicationsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.MtrlApplicationsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<SfeatureMtrlApplicationsRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.SfeatureMtrlApplicationsRefs)
+                .HasForeignKey(r => r.ValueKey);
+
             modelBuilder.Entity<SfeatureOptionIndexRef>(entity =>
             {
                 entity.ToTable("SFeature_optionIndexREF");
@@ -2036,6 +2240,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<SfeatureOptionIndexRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.OptionIndexRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<SfeatureOptionInfoRef>(entity =>
             {
                 entity.ToTable("SFeature_optionInfoREF");
@@ -2058,6 +2267,16 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<SfeatureOptionInfoRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.OptionInfoRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<SfeatureOptionInfoRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.SfeatureOptionInfoRefs)
+                .HasForeignKey(r => r.ValueKey);
 
             modelBuilder.Entity<Smaterial>(entity =>
             {
@@ -2099,6 +2318,11 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<SmaterialDescriptionsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.DescriptionsRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
             modelBuilder.Entity<SmaterialExternalRef>(entity =>
             {
                 entity.ToTable("SMaterial_externalREF");
@@ -2117,6 +2341,16 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<SmaterialExternalRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.ExternalRefs)
+                .HasForeignKey(r => r.OwnerKey);
+
+            modelBuilder.Entity<SmaterialExternalRef>()
+                .HasOne(r => r.Child)
+                .WithMany(c => c.SmaterialExternalRefs)
+                .HasForeignKey(r => r.ValueKey);
 
             modelBuilder.Entity<SmaterialPatternRepeatRef>(entity =>
             {
