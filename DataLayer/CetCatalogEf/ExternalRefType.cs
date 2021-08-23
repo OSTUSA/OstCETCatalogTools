@@ -12,5 +12,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public string PreviewUrl { get; set; }
         public string UsageType { get; set; }
         public string MeasureParam { get; set; }
+
+        public List<SmaterialExternalRef> SmaterialExternalRefs { get; set; }
     }
 }

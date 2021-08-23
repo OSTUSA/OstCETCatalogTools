@@ -33,5 +33,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public List<OptionFeatureRefsRef> FeatureRefs { get; set; }
 
         public List<OptionMtrlApplicationsRef> MtrlApplicationsRefs { get; set; }
+
+        public List<SfeatureOptionInfoRef> SfeatureOptionInfoRefs { get; set; }
     }
 }

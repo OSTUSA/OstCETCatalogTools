@@ -17,5 +17,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public List<MtrlApplicationareaRefRef> MtrlApplicationareaRefs { get; set; }
 
         public List<OptionMtrlApplicationsRef> OptionMtrlApplicationsRefs { get; set; }
+
+        public List<SfeatureMtrlApplicationsRef> SfeatureMtrlApplicationsRefs { get; set; }
     }
 }
