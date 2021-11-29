@@ -2407,6 +2407,300 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.Expirationdate).HasColumnName("_expirationdate");
             });
 
+            modelBuilder.Entity<DataCatalogConnectorsRef>(entity =>
+            {
+                entity.ToTable("DataCatalog_connectorsREF");
+
+                entity.HasIndex(e => e.LookupKey, "DataCatalog_connectorsREFlookupKey");
+
+                entity.HasIndex(e => e.OwnerKey, "DataCatalog_connectorsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "DataCatalog_connectorsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.LookupKey).HasColumnName("lookupKey");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<DataCatalogThumbPathsRef>(entity =>
+            {
+                entity.ToTable("DataCatalog_thumbPathsREF");
+
+                entity.HasIndex(e => e.LookupKey, "DataCatalog_thumbPathsREFlookupKey");
+
+                entity.HasIndex(e => e.OwnerKey, "DataCatalog_thumbPathsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "DataCatalog_thumbPathsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.LookupKey).HasColumnName("lookupKey");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<DsExternalRefKeyType>(entity =>
+            {
+                entity.ToTable("DsExternalRefKeyType");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.Type).HasColumnName("_type");
+
+                entity.Property(e => e.Value).HasColumnName("_value");
+            });
+
+            modelBuilder.Entity<DsProductTypeAddProductRefsRef>(entity =>
+            {
+                entity.ToTable("DsProductType_addProductRefsREF");
+
+                entity.HasIndex(e => e.OwnerKey, "DsProductType_addProductRefsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "DsProductType_addProductRefsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<DsProductTypeConnectorsRef>(entity =>
+            {
+                entity.ToTable("DsProductType_connectorsREF");
+
+                entity.HasIndex(e => e.OwnerKey, "DsProductType_connectorsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "DsProductType_connectorsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<DsProductTypeRuleRefsRef>(entity =>
+            {
+                entity.ToTable("DsProductType_ruleRefsREF");
+
+                entity.HasIndex(e => e.OwnerKey, "DsProductType_ruleRefsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "DsProductType_ruleRefsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<DsTableRowType>(entity =>
+            {
+                entity.ToTable("DsTableRowType");
+
+                entity.HasIndex(e => e.Code, "DsTableRowTypecode");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.Code).HasColumnName("code");
+            });
+
+            modelBuilder.Entity<DsTableRowTypeCellsRef>(entity =>
+            {
+                entity.ToTable("DsTableRowType_cellsREF");
+
+                entity.HasIndex(e => e.OwnerKey, "DsTableRowType_cellsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "DsTableRowType_cellsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<DsTableTypeRowsRef>(entity =>
+            {
+                entity.ToTable("DsTableType_rowsREF");
+
+                entity.HasIndex(e => e.OwnerKey, "DsTableType_rowsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "DsTableType_rowsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<OptionConnectorsRef>(entity =>
+            {
+                entity.ToTable("Option_connectorsREF");
+
+                entity.HasIndex(e => e.OwnerKey, "Option_connectorsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "Option_connectorsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<OptionExternalRefKeysRef>(entity =>
+            {
+                entity.ToTable("Option_externalRefKeysREF");
+
+                entity.HasIndex(e => e.OwnerKey, "Option_externalRefKeysREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "Option_externalRefKeysREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<PrdExternalRefTypeExternalRefKeysRef>(entity =>
+            {
+                entity.ToTable("PrdExternalRefType_externalRefKeysREF");
+
+                entity.HasIndex(e => e.OwnerKey, "PrdExternalRefType_externalRefKeysREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "PrdExternalRefType_externalRefKeysREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<PrdExternalRefTypeNamedPointsRef>(entity =>
+            {
+                entity.ToTable("PrdExternalRefType_namedPointsREF");
+
+                entity.HasIndex(e => e.OwnerKey, "PrdExternalRefType_namedPointsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "PrdExternalRefType_namedPointsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<SfeatureConnectorsRef>(entity =>
+            {
+                entity.ToTable("SFeature_connectorsREF");
+
+                entity.HasIndex(e => e.OwnerKey, "SFeature_connectorsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "SFeature_connectorsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<SfeatureFeatureRefsRef>(entity =>
+            {
+                entity.ToTable("SFeature_featureRefsREF");
+
+                entity.HasIndex(e => e.OwnerKey, "SFeature_featureRefsREFownerKey");
+
+                entity.HasIndex(e => e.ValueKey, "SFeature_featureRefsREFvalueKey");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
+
+                entity.Property(e => e.TypeKey).HasColumnName("typeKey");
+
+                entity.Property(e => e.ValueKey).HasColumnName("valueKey");
+            });
+
+            modelBuilder.Entity<Url>(entity =>
+            {
+                entity.ToTable("Url");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.FileNameBase).HasColumnName("fileNameBase");
+
+                entity.Property(e => e.Scheme).HasColumnName("scheme");
+            });
+
             OnModelCreatingPartial(modelBuilder);
         }
 
