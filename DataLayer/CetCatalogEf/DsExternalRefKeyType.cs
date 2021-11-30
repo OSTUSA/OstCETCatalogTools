@@ -10,5 +10,7 @@ namespace OstToolsDataLayer.CetCatalogEf
         public long Id { get; set; }
         public string Type { get; set; }
         public string Value { get; set; }
+
+        public List<PrdExternalRefTypeExternalRefKeysRef> PrdExternalRefTypeExternalRefKeysRefs { get; set; }
     }
 }

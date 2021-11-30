@@ -110,6 +110,22 @@ namespace OstToolsDataLayer.CetCatalogEf
         public virtual DbSet<SmaterialPatternRepeatRef> SmaterialPatternRepeatRefs { get; set; }
         public virtual DbSet<UsageType> UsageTypes { get; set; }
         public virtual DbSet<VersionType> VersionTypes { get; set; }
+        public virtual DbSet<DataCatalogConnectorsRef> DataCatalogConnectorsRefs { get; set; }
+        public virtual DbSet<DataCatalogThumbPathsRef> DataCatalogThumbPathsRefs { get; set; }
+        public virtual DbSet<DsExternalRefKeyType> DsExternalRefKeyTypes { get; set; }
+        public virtual DbSet<DsProductTypeAddProductRefsRef> DsProductTypeAddProductRefsRefs { get; set; }
+        public virtual DbSet<DsProductTypeConnectorsRef> DsProductTypeConnectorsRefs { get; set; }
+        public virtual DbSet<DsProductTypeRuleRefsRef> DsProductTypeRuleRefsRefs { get; set; }
+        public virtual DbSet<DsTableRowType> DsTableRowTypes { get; set; }
+        public virtual DbSet<DsTableRowTypeCellsRef> DsTableRowTypeCellsRefs { get; set; }
+        public virtual DbSet<DsTableTypeRowsRef> DsTableTypeRowsRefs { get; set; }
+        public virtual DbSet<OptionConnectorsRef> OptionConnectorsRefs { get; set; }
+        public virtual DbSet<OptionExternalRefKeysRef> OptionExternalRefKeysRefs { get; set; }
+        public virtual DbSet<PrdExternalRefTypeExternalRefKeysRef> PrdExternalRefTypeExternalRefKeysRefs { get; set; }
+        public virtual DbSet<PrdExternalRefTypeNamedPointsRef> PrdExternalRefTypeNamedPointsRefs { get; set; }
+        public virtual DbSet<SfeatureConnectorsRef> SfeatureConnectorsRefs { get; set; }
+        public virtual DbSet<SfeatureFeatureRefsRef> SfeatureFeatureRefsRefs { get; set; }
+        public virtual DbSet<Url> Urls { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -1088,7 +1104,7 @@ namespace OstToolsDataLayer.CetCatalogEf
                 .HasOne(r => r.Owner)
                 .WithMany(o => o.NamesRefs)
                 .HasForeignKey(r => r.OwnerKey);
-                
+
 
             modelBuilder.Entity<DsTableType>(entity =>
             {
@@ -2555,6 +2571,12 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
 
+            modelBuilder.Entity<DsTableRowTypeCellsRef>()
+                .HasOne(r => r.Owner)
+                .WithMany(o => o.Cells)
+                .HasForeignKey(r => r.OwnerKey);
+
+
             modelBuilder.Entity<DsTableTypeRowsRef>(entity =>
             {
                 entity.ToTable("DsTableType_rowsREF");
@@ -2630,6 +2652,16 @@ namespace OstToolsDataLayer.CetCatalogEf
 
                 entity.Property(e => e.ValueKey).HasColumnName("valueKey");
             });
+
+            modelBuilder.Entity<PrdExternalRefTypeExternalRefKeysRef>()
+                .HasOne(p => p.Owner)
+                .WithMany(o => o.ExternalRefKeys)
+                .HasForeignKey(p => p.OwnerKey);
+
+            modelBuilder.Entity<PrdExternalRefTypeExternalRefKeysRef>()
+                .HasOne(c => c.Child)
+                .WithMany(d => d.PrdExternalRefTypeExternalRefKeysRefs)
+                .HasForeignKey(p => p.ValueKey);
 
             modelBuilder.Entity<PrdExternalRefTypeNamedPointsRef>(entity =>
             {

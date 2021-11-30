@@ -9,5 +9,7 @@ namespace OstToolsDataLayer.CetCatalogEf
     {
         public long Id { get; set; }
         public string Code { get; set; }
+
+        public List<DsTableRowTypeCellsRef> Cells { get; set; }
     }
 }
