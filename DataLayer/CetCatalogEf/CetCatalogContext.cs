@@ -941,7 +941,7 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.HasIndex(e => e.ValueKey, "DsProductType_externalREFvalueKey");
 
                 entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
+                   // .ValueGeneratedNever()
                     .HasColumnName("id");
 
                 entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");
@@ -1691,7 +1691,7 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.HasIndex(e => e.Code, "PrdExternalRefTypecode");
 
                 entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
+                    //.ValueGeneratedNever()
                     .HasColumnName("id");
 
                 entity.Property(e => e.Code).HasColumnName("code");
@@ -2643,7 +2643,7 @@ namespace OstToolsDataLayer.CetCatalogEf
                 entity.HasIndex(e => e.ValueKey, "PrdExternalRefType_externalRefKeysREFvalueKey");
 
                 entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
+                    //.ValueGeneratedNever()
                     .HasColumnName("id");
 
                 entity.Property(e => e.OwnerKey).HasColumnName("ownerKey");

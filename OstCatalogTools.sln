@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31025.194
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DwgCopier", "DwgCopier\DwgCopier.csproj", "{74438FE8-A88F-4863-AAB5-9FB3F53F58B0}"
 EndProject
@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OstCatalogJuicer", "Catalog
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OstToolsCommon", "OstToolsCommon\OstToolsCommon.csproj", "{FFF39C3F-4F86-45E4-B008-953462CA203B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OstCatalogToolsUnitTest", "OstCatalogToolsUnitTest\OstCatalogToolsUnitTest.csproj", "{532FBBAB-DC22-4176-A4CA-E5DBF22DDFDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OstCatalogToolsUnitTest", "OstCatalogToolsUnitTest\OstCatalogToolsUnitTest.csproj", "{532FBBAB-DC22-4176-A4CA-E5DBF22DDFDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "voloCatalog", "voloCatalog\voloCatalog.csproj", "{F682A0B7-D00F-4BD1-9DF8-30010AA6B5FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{532FBBAB-DC22-4176-A4CA-E5DBF22DDFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{532FBBAB-DC22-4176-A4CA-E5DBF22DDFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{532FBBAB-DC22-4176-A4CA-E5DBF22DDFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F682A0B7-D00F-4BD1-9DF8-30010AA6B5FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F682A0B7-D00F-4BD1-9DF8-30010AA6B5FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F682A0B7-D00F-4BD1-9DF8-30010AA6B5FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F682A0B7-D00F-4BD1-9DF8-30010AA6B5FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
